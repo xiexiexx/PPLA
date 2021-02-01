@@ -24,8 +24,8 @@ int main()
   // 利用随机数生成器生成0.0到1.0之间的实数.
   std::default_random_engine generator(time(NULL));
   std::uniform_real_distribution<double> distribution(0.0, 1.0);
-  for (size_t i = 0; i < V.size(); ++i)
-    V[i] = distribution(generator);
+  for (auto& x : V)
+    x = distribution(generator);
   // 数据赋值计时结束并输出时间.
   end_t = std::chrono::steady_clock::now();
   std::cout << (std::chrono::duration<double>(end_t - start_t).count() / 60)
