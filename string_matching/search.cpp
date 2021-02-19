@@ -12,7 +12,7 @@ int main()
   p = "Algorithms";
 	iter = std::search(t.begin(), t.end(),
 										 std::boyer_moore_searcher(p.begin(), p.end()));
-  std::cout << iter - p.begin() << std::endl;
+  std::cout << iter - t.begin() << std::endl;
   p = "Data";
 	iter = std::search(t.begin(), t.end(),
 										 std::boyer_moore_searcher(p.begin(), p.end()));
