@@ -15,7 +15,7 @@ int main()
   std::cout << iter - t.begin() << std::endl;
   p = "Data";
   iter = std::search(t.begin(), t.end(),
-                     std::boyer_moore_searcher(p.begin(), p.end()));
+                     std::boyer_moore_horspool_searcher(p.begin(), p.end()));
   std::cout << iter - t.begin() << std::endl;
   return 0;
 }
