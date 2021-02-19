@@ -10,12 +10,12 @@ int main()
 	auto iter = std::search(t.begin(), t.end(), p.begin(), p.end());
   std::cout << iter - t.begin() << std::endl;
   p = "Algorithms";
-	iter = std::search(t.begin(), t.end(),
-										 std::boyer_moore_searcher(p.begin(), p.end()));
+  iter = std::search(t.begin(), t.end(),
+                     std::boyer_moore_searcher(p.begin(), p.end()));
   std::cout << iter - t.begin() << std::endl;
   p = "Data";
-	iter = std::search(t.begin(), t.end(),
-										 std::boyer_moore_searcher(p.begin(), p.end()));
-	std::cout << iter - t.begin() << std::endl;
-	return 0;
+  iter = std::search(t.begin(), t.end(),
+                     std::boyer_moore_searcher(p.begin(), p.end()));
+  std::cout << iter - t.begin() << std::endl;
+  return 0;
 }
