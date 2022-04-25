@@ -24,3 +24,7 @@ g++ 9 and libtbb-dev in Ubuntu 20.04.
 ## Clang
 
 It does not yet support `execution`.
+
+# Binary Files
+
+- [MSVC](/bin/)
