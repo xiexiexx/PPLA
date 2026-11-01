@@ -3,6 +3,7 @@
 MSVC/GCC/Clang.
 
 - billionsort
+- integer_billionsort
 - billionsort_heap
 - billionsort_forward_list
 - billionsort_set
@@ -19,7 +20,7 @@ Visual Studio Community 2019.
 
 g++ 9 and libtbb-dev in Ubuntu 20.04.
 
-- `g++ -O3 -std=c++17 parallel_billionsort.cpp -ltbb`
+- `g++ -O3 parallel_billionsort.cpp -ltbb`
 
 ## Clang
 
