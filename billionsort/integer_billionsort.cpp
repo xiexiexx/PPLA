@@ -8,13 +8,13 @@
 inline void print_duration(std::chrono::steady_clock::time_point start_t,
                            std::chrono::steady_clock::time_point end_t)
 {
-  std::cout << (std::chrono::duration<double>(end_t - start_t).count() / 60)
-            << " minutes" << std::endl;
+  std::cout << std::chrono::duration<double>(end_t - start_t).count()
+            << " seconds" << std::endl;
 }
 
 int main()
 {
-  // 请注意: 10亿个数, 需要7.5GB内存.
+  // 请注意: 10亿个整数, 需要7.5GB内存.
   // 计时器start_t, end_t.
 
   // 内存分配.
@@ -26,7 +26,7 @@ int main()
 
   // 数据赋值.
   start_t = std::chrono::steady_clock::now();
-  // 利用随机数生成器生成0.0到1.0之间的实数.
+  // 利用随机数生成器生成0到uint64_t类型最大值之间的自然数.
   std::default_random_engine generator(time(NULL));
   std::uniform_int_distribution<uint64_t> distribution(0, std::numeric_limits<uint64_t>::max());
   for (auto& x : V)
