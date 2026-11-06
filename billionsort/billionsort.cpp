@@ -8,8 +8,8 @@
 inline void print_duration(std::chrono::steady_clock::time_point start_t,
                            std::chrono::steady_clock::time_point end_t)
 {
-  std::cout << (std::chrono::duration<double>(end_t - start_t).count() / 60)
-            << " minutes" << std::endl;
+  std::cout << std::chrono::duration<double>(end_t - start_t).count()
+            << " seconds" << std::endl;
 }
 
 int main()
@@ -21,6 +21,7 @@ int main()
   auto start_t = std::chrono::steady_clock::now();
   std::vector<double> V(1000000000);
   auto end_t = std::chrono::steady_clock::now();
+  std::cout << "Preparation: ";
   print_duration(start_t, end_t);
 
   // 数据赋值.
@@ -31,6 +32,7 @@ int main()
   for (auto& x : V)
     x = distribution(generator);
   end_t = std::chrono::steady_clock::now();
+  std::cout << "Initialization: ";
   print_duration(start_t, end_t);
 
   // 串行排序.
@@ -38,6 +40,7 @@ int main()
   // 对10亿个随机数排序, 如果用数组时间也没什么太大差别.
   std::sort(V.begin(), V.end());
   end_t = std::chrono::steady_clock::now();
+  std::cout << "Sorting: ";
   print_duration(start_t, end_t);
 
   return 0;
