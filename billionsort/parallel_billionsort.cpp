@@ -22,6 +22,7 @@ int main()
   // 内存分配计时开始.
   auto start_t = std::chrono::steady_clock::now();
   // 10亿个数, 需要7.5GB内存.
+  // 换用malloc申请动态数组, 此处速度会更快.
   // 并行排序可能还需要额外较多内存, 最好留存16GB内存.
   std::vector<double> V(1000000000);
   // 内存分配计时结束并输出时间.
