@@ -19,6 +19,7 @@ int main()
 
   // 内存分配.
   auto start_t = std::chrono::steady_clock::now();
+  // 换用malloc申请动态数组, 此处速度会更快.
   std::vector<double> V(1000000000);
   auto end_t = std::chrono::steady_clock::now();
   std::cout << "Preparation: ";
